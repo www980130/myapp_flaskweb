@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{detail['title']}}</title>
+</head>
+<body>
+    <header>
+        <div>
+            <h1 style="margin-bottom:0px"><i>{{ detail['title'] }}</i></h1>
+        </div>
+        <div align="right"> <!-- 오른쪽 정렬-->
+            <h3 style="margin:0px">date : {{ detail['create_date'] }}</h3>
+        </div>
+    </header>
+    <hr>
+    <div>
+        {{ detail['content'] }}
+    </div>
+    <br>
+    <footer>
+        <b><i>author : {{ detail['author'] }}</i></b>
+    </footer>
+    
+</body>
+</html>
