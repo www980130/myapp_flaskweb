@@ -19,18 +19,33 @@
                 <th>title</th>
                 <th>author</th>
                 <th>date</th>
+                <th>etc</th>
             </tr>
         </thead>
         <tbody>
             {% for data_i in data %}
                 <tr align="center">
-                    <td>{{ data_i['index'] }}</td>
-                    <td><a href="/{{ data_i['index'] }}/board">{{ data_i['title'] }}</a></td>
-                    <td>{{ data_i['author'] }}</td>
-                    <td>{{ data_i['create_date'] }}</td>
+                    <td>{{ data_i[0] }}</td>
+                    <td><a href="/{{ data_i[0] }}/board">{{ data_i[1] }}</a></td>
+                    <td>{{ data_i[3] }}</td>
+                    <td>{{ data_i[4] }}</td>
+                    <td>
+                        <a href="/{{ data_i[0] }}/delete">
+                            <button onclick="return confirm('Do you really want to delete?')">delete</button>
+                        </a> 
+                        <!-- 버튼 클릭 시 정말 삭제할 것이냐고 되묻는 알림창 뜨게 하기 -->
+                    </td>
+                    <td>
+                        <a href="/{{ data_i[0] }}/edit">
+                            <button>edit</button>
+                        </a>
+                    </td>
                 </tr>
             {% endfor %}
         </tbody>    
     </table>
+    <div align="right">
+        <a href="/board/add"><button>write</button></a>
+    </div>
 </body>
 </html>
